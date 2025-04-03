@@ -36,8 +36,145 @@
       <a><router-link to="/link-Wallet-Address">Click here to proceed</router-link></a>
     </p>
 
+    <p v-show="this.UserDetails.user.userStatus === 'Suspended'" class="text-2">
+      Your account is Suspended. kindly contact support for further assistance.
+    </p>
 
-    <div class="law">
+
+    <div v-if="this.UserDetails.user.userStatus === 'Suspended'" class="law">
+      <div class="section-3">
+
+
+        <div class="section-3-content">
+          <div class="content-1">
+            <p class="content-1-text-1">Deposited</p>
+            <div>
+              <p class="content-1-text-2">---</p>
+            </div>
+          </div>
+          <div class="content-2">
+            <img src="@/assets/wallet-balance-icon.svg" alt="wallet-balance-icon"/>
+          </div>
+        </div>
+
+        <div class="vl-2"></div>
+
+        <div class="section-3-content">
+          <div class="content-1">
+            <p class="content-1-text-1">Withdrawn</p>
+            <div>
+              <p class="content-1-text-2">---</p>
+            </div>
+          </div>
+          <div class="content-2">
+            <img src="@/assets/wallet-number-icon.svg" alt="wallet-balance-icon"/>
+          </div>
+        </div>
+
+        <div class="vl-2"></div>
+
+        <div class="section-3-content">
+          <div class="content-1">
+            <p class="content-1-text-1">Profits</p>
+            <div>
+              <p class="content-1-text-2">---</p>
+            </div>
+          </div>
+          <div class="content-2">
+            <img src="@/assets/wallet-number-icon.svg" alt="wallet-balance-icon"/>
+          </div>
+        </div>
+
+        <div class="vl-2"></div>
+
+        <div class="section-3-content">
+          <div class="content-1">
+            <p class="content-1-text-1">Current Plan</p>
+            <div>
+              <p class="content-1-text-2">---</p>
+            </div>
+          </div>
+          <div class="content-2">
+            <img src="@/assets/wallet-number-icon.svg" alt="wallet-balance-icon"/>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="section-3">
+
+        <div class="section-3-content">
+          <div class="content-1">
+            <p class="content-1-text-1">BTC Balance</p>
+            <div>
+              <p class="content-1-text-2">---</p>
+            </div>
+          </div>
+          <div class="content-2">
+            <img src="@/assets/wallet-balance-icon.svg" alt="wallet-balance-icon"/>
+          </div>
+        </div>
+
+        <div class="vl-2"></div>
+
+        <div class="section-3-content">
+          <div class="content-1">
+            <p class="content-1-text-1">Main Balance</p>
+            <div>
+              <p class="content-1-text-2">---</p>
+            </div>
+          </div>
+          <div class="content-2">
+            <img src="@/assets/wallet-number-icon.svg" alt="wallet-balance-icon"/>
+          </div>
+        </div>
+
+        <div class="vl-2"></div>
+
+        <div class="section-3-content">
+          <div class="content-1">
+            <p class="content-1-text-1">Bonus</p>
+            <div>
+              <p class="content-1-text-2">---</p>
+            </div>
+          </div>
+          <div class="content-2">
+            <img src="@/assets/wallet-number-icon.svg" alt="wallet-balance-icon"/>
+          </div>
+        </div>
+
+        <div class="vl-2"></div>
+
+        <div class="section-3-content">
+          <div class="content-1">
+            <p class="content-1-text-1">Currency</p>
+            <div>
+              <p class="content-1-text-2">---</p>
+            </div>
+          </div>
+          <div class="content-2">
+            <img src="@/assets/wallet-number-icon.svg" alt="wallet-balance-icon"/>
+          </div>
+        </div>
+
+        <!--        <div class="vl-2"></div>-->
+
+        <!--        <div class="section-3-content">-->
+        <!--          <div class="content-1">-->
+        <!--            <p class="content-1-text-1">Investment Plan</p>-->
+        <!--            <div>-->
+        <!--              <p class="content-1-text-2"></p>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--          <div class="content-2">-->
+        <!--            <img src="@/assets/wallet-number-icon.svg" alt="wallet-balance-icon"/>-->
+        <!--          </div>-->
+        <!--        </div>-->
+
+      </div>
+    </div>
+
+    <div v-else class="law">
       <div class="section-3">
 
 

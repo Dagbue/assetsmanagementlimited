@@ -235,6 +235,7 @@
                 <option :value="null" disabled>select status</option>
                 <option value="verified">Verified</option>
                 <option value="unVerified">UnVerified</option>
+                <option value="Suspended">Suspended</option>
               </select>
             </div>
 
