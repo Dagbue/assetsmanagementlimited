@@ -5,7 +5,7 @@
     <div class="section-1">
 
       <div>
-        <img src="https://www.cryptoxtake.com/libs/img/featureone.png" alt="image" class="section-1-image">
+        <img src="https://www.etoro.com/wp-content/uploads/2025/06/Trade-Markets-on-eToro_desktop.png" alt="image" class="section-1-image">
       </div>
 
       <div class="section-1-content">
@@ -78,6 +78,7 @@ export default {
   align-content: center;
   align-items: center;
   margin-left: 3%;
+  gap: 20px;
 }
 
 .section-1-image{

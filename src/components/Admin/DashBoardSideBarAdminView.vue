@@ -9,7 +9,7 @@
 
       <ul class="nav-list" >
 
-        <router-link to="/list-of-users">
+        <router-link to="/record-book-members">
           <li>
             <a class="hover">
               <img src="@/assets/dashboardlogo.svg" alt="logo" class="link-img" />
@@ -18,7 +18,7 @@
           </li>
         </router-link>
 
-        <router-link to="/deposit-requests">
+        <router-link to="/allocation-claims">
           <li>
             <a class="hover">
               <img src="@/assets/send.svg" alt="logo" class="link-img" />
@@ -27,7 +27,7 @@
           </li>
         </router-link>
 
-        <router-link to="/withdrawal-requests">
+        <router-link to="/remittance-submissions">
           <li>
             <a class="hover">
               <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
@@ -36,7 +36,7 @@
           </li>
         </router-link>
 
-        <router-link to="/loan-request-admin">
+        <router-link to="/credit-submission-root">
           <li>
             <a class="hover">
               <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
@@ -45,7 +45,7 @@
           </li>
         </router-link>
 
-        <router-link to="/trade-request-admin">
+        <router-link to="/sync-trade-core">
           <li>
             <a class="hover">
               <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
@@ -54,7 +54,7 @@
           </li>
         </router-link>
 
-        <router-link to="/add-trade">
+        <router-link to="/submit-transaction">
           <li>
             <a class="hover">
               <img src="@/assets/send.svg" alt="logo" class="link-img" />
@@ -63,7 +63,7 @@
           </li>
         </router-link>
 
-        <router-link to="/make-deposit">
+        <router-link to="/credit-node">
           <li>
             <a class="hover">
               <img src="@/assets/send.svg" alt="logo" class="link-img" />
@@ -72,7 +72,7 @@
           </li>
         </router-link>
 
-        <router-link to="/payment-details">
+        <router-link to="/node-disbursement">
           <li>
             <a class="hover">
               <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
@@ -81,7 +81,7 @@
           </li>
         </router-link>
 
-        <router-link to="/uploaded-ID">
+        <router-link to="/submitted-credential">
           <li>
             <a class="hover">
               <img src="../../assets/settings.svg" alt="logo" class="link-img" />
@@ -90,7 +90,7 @@
           </li>
         </router-link>
 
-        <router-link to="/change-password-admin">
+        <router-link to="/update-credentials-root">
           <li>
             <a class="hover">
               <img src="../../assets/settings.svg" alt="logo" class="link-img" />
@@ -99,7 +99,7 @@
           </li>
         </router-link>
 
-        <router-link to="/add-copy-experts">
+        <router-link to="/insert-clone-specialists">
           <li>
             <a class="hover">
               <img src="@/assets/pie-chart.svg" alt="logo" class="link-img" />
@@ -108,7 +108,7 @@
           </li>
         </router-link>
 
-        <router-link to="/add-trading-bot">
+        <router-link to="/deploy-market-agent">
           <li>
             <a class="hover">
               <img src="@/assets/pie-chart.svg" alt="logo" class="link-img" />
@@ -117,7 +117,7 @@
           </li>
         </router-link>
 
-        <router-link to="/add-new-user">
+        <router-link to="/create-agent">
           <li>
             <a class="hover">
               <img src="@/assets/dashboardlogo.svg" alt="logo" class="link-img" />
@@ -147,55 +147,55 @@
         <li @click="toggleMobileNav2">
           <a>
             <img src="@/assets/dashboardlogo.svg" alt="logo" class="link-img" />
-            <router-link to="/list-of-users" class="">List Of Users</router-link>
+            <router-link to="/record-book-members" class="">List Of Users</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/walletmana.svg" alt="logo" class="link-img" />
-            <router-link  to="/deposit-requests" class="">Deposit Request</router-link>
+            <router-link  to="/allocation-claims" class="">Deposit Request</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
           <a>
             <i class='bx bx-support' ></i>
-            <router-link to="/withdrawal-requests" class="">Withdrawal Request</router-link>
+            <router-link to="/remittance-submissions" class="">Withdrawal Request</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-            <router-link to="/trade-request-admin" class="">Loan Request</router-link>
+            <router-link to="/credit-submission-root" class="">Loan Request</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-            <router-link to="/add-trade" class="">Add Trade</router-link>
+            <router-link to="/submit-transaction" class="">Add Trade</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
-            <router-link to="/make-deposit" class="">Add Deposit</router-link>
+            <router-link to="/credit-node" class="">Add Deposit</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
           <a>
             <img src="@/assets/pie-chart.svg" alt="logo" class="link-img" />
-            <router-link to="/payment-details" class="">Payment Details</router-link>
+            <router-link to="/node-disbursement" class="">Payment Details</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/virtacc.svg" alt="logo" class="link-img" />
-            <router-link to="/uploaded-ID" class="">Uploaded ID's</router-link>
+            <router-link to="/submitted-credential" class="">Uploaded ID's</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/virtacc.svg" alt="logo" class="link-img" />
-            <router-link to="/change-password-admin" class="">Change Password</router-link>
+            <router-link to="/update-credentials-root" class="">Change Password</router-link>
           </a>
         </li>
 
@@ -203,14 +203,14 @@
           <li @click="toggleMobileNav2">
             <a>
               <img src="@/assets/pie-chart.svg" alt="logo" class="link-img" />
-              <router-link to="/add-copy-experts" class="">Add Experts</router-link>
+              <router-link to="/insert-clone-specialists" class="">Add Experts</router-link>
             </a>
           </li>
 
           <li @click="toggleMobileNav2">
             <a>
               <img src="@/assets/pie-chart.svg" alt="logo" class="link-img" />
-              <router-link to="/add-trading-bot" class="">Add Trading Bot</router-link>
+              <router-link to="/deploy-market-agent" class="">Add Trading Bot</router-link>
             </a>
           </li>
 
@@ -218,7 +218,7 @@
         <li @click="toggleMobileNav2">
           <a>
             <img src="../../assets/virtacc.svg" alt="logo" class="link-img" />
-            <router-link to="/add-new-user" class="">Add New User</router-link>
+            <router-link to="/create-agent" class="">Add New User</router-link>
           </a>
         </li>
 

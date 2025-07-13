@@ -170,7 +170,7 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push("/trade-request-admin");
+      this.$router.push("/sync-trade-core");
     },
 
     convertDateFormat(dateStr) {
@@ -221,7 +221,7 @@ export default {
         tradeType : this.tradeType
       })
       await StoreUtils.dispatch(StoreUtils.actions.trade.readAllTrade)
-      await router.push("/trade-request-admin")
+      await router.push("/sync-trade-core")
     }
   },
   created() {

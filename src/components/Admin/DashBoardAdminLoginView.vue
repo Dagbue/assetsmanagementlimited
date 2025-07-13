@@ -81,7 +81,7 @@ export default {
       const validPassword = "24PrincessVille$$";
 
       if (this.email === validEmail && this.password === validPassword) {
-        this.$router.push("/dashBoard-side-bar-admin");
+        this.$router.push("/launchpad-edgepanel-root");
       } else {
         this.error = "Invalid email or password. Please try again.";
       }

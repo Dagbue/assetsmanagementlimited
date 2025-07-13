@@ -217,7 +217,7 @@ export default {
       await StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {
         userId: child.userId
       })
-      await router.push("/list-of-users-update");
+      await router.push("/catalog-nodes-refresh");
     },
 
     async deleteUser(child) {

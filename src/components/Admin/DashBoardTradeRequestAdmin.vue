@@ -262,7 +262,7 @@ export default {
       await StoreUtils.dispatch(StoreUtils.actions.trade.readTradeById, {
         tradeId: child.tradeId
       })
-      await router.push("/trade-request-admin-update");
+      await router.push("/sync-trade-core-update");
     },
 
     previousPage() {

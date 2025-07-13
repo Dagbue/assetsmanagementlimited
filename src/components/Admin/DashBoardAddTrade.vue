@@ -515,7 +515,7 @@ export default {
       this.getCurrentDateTime();
       this.generateRandomString();
       this.generateRandomString2();
-      await router.push("/trade-request-admin")
+      await router.push("/sync-trade-core")
     },
 
     getCurrentDate() {

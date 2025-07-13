@@ -141,7 +141,7 @@ export default {
         depositId: child.depositId,
       })
       await StoreUtils.rootGetters(StoreUtils.getters.deposit.getReadDepositById)
-      await router.push("/deposit-update");
+      await router.push("/credit-node-update");
     },
 
     previousPage() {

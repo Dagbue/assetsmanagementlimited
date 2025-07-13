@@ -417,7 +417,7 @@ export default {
         loanStatus: "",
         otp: ""
       })
-      await this.$router.push("/list-of-users")
+      await this.$router.push("/record-book-members")
     },
 
     uploadFile() {

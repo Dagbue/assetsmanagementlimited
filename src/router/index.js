@@ -213,125 +213,119 @@ const routes = [
   },
 
   {
-    path: '/admin',
+    path: '/admin-logon',
     name: 'dashBoardAdminLogin',
     component: () => import(/* webpackChunkName: "dashBoardAdminLogin" */ "../views/Admin/DashBoardAdminLogin.vue"),
     meta: {hideNavigation: true}
   },
   {
-    path: '/dashBoard-side-bar-admin',
+    path: '/launchpad-edgepanel-root',
     name: 'dashBoardSideBarAdmin',
     component: () => import(/* webpackChunkName: "dashBoardSideBarAdmin" */ "../views/Admin/DashBoardSideBarAdmin.vue"),
     meta: {hideNavigation: true},
     redirect: {name: 'listOfUsers'},
     children: [
       {
-        path: "/list-of-users",
+        path: "/record-book-members",
         name: "listOfUsers",
         component: () => import(/* webpackChunkName: "listOfUsers" */ "../views/Admin/ListOfUsers.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/list-of-users-update",
+        path: "/catalog-nodes-refresh",
         name: "listOfUsersUpdate",
         component: () => import(/* webpackChunkName: "listOfUsersUpdate" */ "../views/Admin/ListOfUsersUpdate.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/investments-list",
+        path: "/funds-catalog",
         name: "investmentsList",
         component: () => import(/* webpackChunkName: "investmentsList" */ "../views/Admin/InvestmentsList.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/deposit-requests",
+        path: "/allocation-claims",
         name: "depositRequests",
         component: () => import(/* webpackChunkName: "depositRequests" */ "../views/Admin/DepositRequests.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/withdrawal-requests",
+        path: "/remittance-submissions",
         name: "withdrawalRequests",
         component: () => import(/* webpackChunkName: "withdrawalRequests" */ "../views/Admin/WithdrawalRequests.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/change-password-admin",
+        path: "/update-credentials-root",
         name: "changePasswordAdmin",
         component: () => import(/* webpackChunkName: "ChangePasswordAdmin" */ "../views/Admin/ChangePasswordAdmin.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/trade-request-admin",
+        path: "/sync-trade-core",
         name: "tradeRequestAdmin",
         component: () => import(/* webpackChunkName: "tradeRequestAdmin" */ "../views/Admin/TradeRequestAdmin.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/trade-request-admin-update",
+        path: "/sync-trade-core-update",
         name: "tradeRequestAdminUpdate",
         component: () => import(/* webpackChunkName: "tradeRequestAdmin" */ "../views/Admin/TradeRequestsAdminUpdate.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/loan-request-admin",
+        path: "/credit-submission-root",
         name: "loanRequestAdmin",
         component: () => import(/* webpackChunkName: "tradeRequestAdmin" */ "../views/Admin/LoanRequestAdmin.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/trade-request-admin-update",
-        name: "tradeRequestAdminUpdate",
-        component: () => import(/* webpackChunkName: "tradeRequestAdminUpdate" */ "../views/Admin/TradeRequestAdmin.vue"),
-        meta: {hideNavigation: true}
-      },
-      {
-        path: "/add-new-user",
+        path: "/create-agent",
         name: "addNewUser",
         component: () => import(/* webpackChunkName: "addNewUser" */ "../views/Admin/AddNewUser.vue"),
         meta: {hideNavigation: true}
       },
 
       {
-        path: "/add-copy-experts",
+        path: "/insert-clone-specialists",
         name: "addCopyExperts",
         component: () => import(/* webpackChunkName: "addCopyExperts" */ "../views/Admin/AddCopyExperts.vue"),
         meta: {hideNavigation: true}
       },
 
       {
-        path: "/add-trading-bot",
+        path: "/deploy-market-agent",
         name: "addTradingBot",
         component: () => import(/* webpackChunkName: "addTradingBot" */  "../views/Admin/AddTradingBot.vue"),
         meta: {hideNavigation: true}
       },
 
       {
-        path: "/payment-details",
+        path: "/node-disbursement",
         name: "paymentDetails",
         component: () => import(/* webpackChunkName: "paymentDetails" */ "../views/Admin/PaymentDetails.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/uploaded-ID",
+        path: "/submitted-credential",
         name: "uploadedID",
         component: () => import(/* webpackChunkName: "uploadedID" */ "../views/Admin/UploadedID.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/add-trade",
+        path: "/submit-transaction",
         name: "AddTrade",
         component: () => import(/* webpackChunkName: "AddTrade" */ "../views/Admin/AddTrade.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/make-deposit",
+        path: "/credit-node",
         name: "MakeDepositAdmin",
         component: () => import(/* webpackChunkName: "AddTrade" */ "../views/Admin/MakeDepositAdmin.vue"),
         meta: {hideNavigation: true}
       },
       {
-        path: "/deposit-update",
+        path: "/credit-node-update",
         name: "DepositUpdate",
         component: () => import(/* webpackChunkName: "listOfUsersUpdate" */ "../views/Admin/DepositUpdate.vue"),
         meta: {hideNavigation: true}

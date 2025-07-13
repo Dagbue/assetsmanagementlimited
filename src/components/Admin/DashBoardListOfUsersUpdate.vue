@@ -324,7 +324,7 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push("/list-of-users");
+      this.$router.push("/record-book-members");
     },
 
     // getUserInfo() {
@@ -404,7 +404,7 @@ export default {
       await StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {
         userId: this.getAdminUserId.userId,
       })
-      await router.push("/list-of-users")
+      await router.push("/record-book-members")
     }
   },
 

@@ -125,7 +125,7 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push("/make-deposit");
+      this.$router.push("/credit-node");
     },
 
     // getUserInfo() {
@@ -158,7 +158,7 @@ export default {
       await StoreUtils.dispatch(StoreUtils.actions.deposit.readUserDeposit, {
         userId: this.getDepositUserId.userId,
       })
-      await router.push("/make-deposit")
+      await router.push("/credit-node")
     }
   },
 

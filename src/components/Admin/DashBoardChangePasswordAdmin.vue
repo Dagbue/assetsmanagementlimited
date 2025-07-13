@@ -70,7 +70,7 @@ export default {
         userId : this.userId,
         newPassword: this.model.newPassword
       })
-      await router.push("/list-of-users")
+      await router.push("/record-book-members")
     },
 
   },
