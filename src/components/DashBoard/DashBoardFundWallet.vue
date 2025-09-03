@@ -161,7 +161,7 @@ import router from "@/router";
 import BaseButton from "@/components/baseComponents/buttons/BaseButton.vue";
 import DepositRequest from "@/model/request/DepositRequest";
 import StoreUtils from "@/utility/StoreUtils";
-import {mapState} from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: "DashBoardFundWallet",
@@ -169,9 +169,13 @@ export default {
     BaseButton,
     FundWalletModal
   },
-  computed:{
+  computed: {
+    readPaymentWalletById() {
+      return this.$store.getters[StoreUtils.getters.paymentWallet.getReadPaymentWalletById] || {};
+    },
     ...mapState({
       loading: state => state.deposit.loading,
+      loading2: state => state.paymentWallet.loading,
       auth: state => state.auth,
     }),
   },
@@ -189,34 +193,55 @@ export default {
       ],
       userId: "",
       userInfo: "",
-      randomString: ""
+      randomString: "",
+      bitcoinAddress: "",
+      ethereumAddress: "",
+      bankName: "",
+      accountNumber: "",
+      routingNumber: ""
     };
   },
   methods: {
     async hideDialog() {
       this.dialogIsVisible = false;
-      await router.push('/over-view')
+      await router.push('/over-view');
     },
-
     async showDialog() {
-      await StoreUtils.dispatch(StoreUtils.actions.deposit.depositCreate, {
-        userId : this.userId,
-        amount : this.btcBalance,
-        transactionMethod : this.depositMethod,
-        transactionType : "deposit",
-        transactionReference : this.randomString,
-        depositStatus: "pending",
-        additionalComment : this.model.additionalComment,
-        depositDate : null
-      })
-      await StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
-        walletId: 1,
-      })
-      StoreUtils.rootGetters(StoreUtils.getters.paymentWallet.getReadPaymentWalletById)
-      this.selectedItem = this.depositMethod;
-      this.dialogIsVisible = true;
+      if (!this.btcBalance || this.btcBalance <= 0 || !this.depositMethod) {
+        await Swal.fire({
+          icon: 'warning',
+          title: 'Invalid Input',
+          text: 'Please enter a valid amount and select a deposit method.',
+        });
+        return;
+      }
+      try {
+        await this.$store.dispatch(StoreUtils.actions.deposit.depositCreate, {
+          userId: this.userId,
+          amount: this.btcBalance,
+          transactionMethod: this.depositMethod,
+          transactionType: "deposit",
+          transactionReference: this.randomString,
+          depositStatus: "pending",
+          additionalComment: this.model.additionalComment,
+          depositDate: null
+        });
+        await Swal.fire({
+          icon: 'success',
+          title: 'Pending',
+          text: 'Deposit Request Pending',
+        });
+        this.selectedItem = this.depositMethod;
+        this.dialogIsVisible = true;
+      } catch (error) {
+        console.error('Failed to create deposit:', error);
+        await Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Failed to process deposit. Please try again.',
+        });
+      }
     },
-
     generateRandomString() {
       const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
       let result = '';
@@ -225,54 +250,48 @@ export default {
         result += characters.charAt(randomIndex);
       }
       this.randomString = result;
+    },
+    populateForm() {
+      const paymentWallet = this.readPaymentWalletById?.paymentWallet;
+      if (paymentWallet) {
+        this.bitcoinAddress = paymentWallet.bitcoinAddress || '';
+        this.ethereumAddress = paymentWallet.ethereumAddress || '';
+        this.bankName = paymentWallet.bankName || '';
+        this.accountNumber = paymentWallet.accountNumber || '';
+        this.routingNumber = paymentWallet.routingNumber || '';
+      }
+    },
+    async getList() {
+      try {
+        await this.$store.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
+          walletId: 1,
+        });
+        this.populateForm();
+      } catch (error) {
+        console.error('Failed to fetch wallet data:', error);
+        await Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Failed to load wallet data. Please try again.',
+        });
+      }
     }
-
   },
+  async created() {
+    // Generate random string
+    this.generateRandomString();
 
-  beforeMount() {
-    this.generateRandomString()
-    this.populateForm()
-
-    StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
-      walletId: 1,
-    })
-    StoreUtils.rootGetters(StoreUtils.getters.paymentWallet.getReadPaymentWalletById)
-
-    this.userId = localStorage.getItem('userId')
-
-
-    // Retrieve the object from local storage
+    // Fetch user info from localStorage
     const storedObject = localStorage.getItem('userInfo');
-
     if (storedObject) {
       this.userInfo = JSON.parse(storedObject);
     }
-  },
+    this.userId = localStorage.getItem('userId');
 
-  created() {
-    this.userId = localStorage.getItem('userId')
-
-    // Retrieve the object from local storage
-    const storedObject = localStorage.getItem('userInfo');
-
-    if (storedObject) {
-      this.userInfo = JSON.parse(storedObject);
-    }
-  },
-
-  mounted() {
-    this.generateRandomString()
-
-    this.userId = localStorage.getItem('userId')
-
-    // Retrieve the object from local storage
-    const storedObject = localStorage.getItem('userInfo');
-
-    if (storedObject) {
-      this.userInfo = JSON.parse(storedObject);
-    }
+    // Fetch wallet data and populate form
+    await this.getList();
   }
-}
+};
 </script>
 
 <style scoped>
