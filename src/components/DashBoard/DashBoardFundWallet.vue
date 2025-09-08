@@ -162,6 +162,7 @@ import BaseButton from "@/components/baseComponents/buttons/BaseButton.vue";
 import DepositRequest from "@/model/request/DepositRequest";
 import StoreUtils from "@/utility/StoreUtils";
 import { mapState } from "vuex";
+import Swal from "sweetalert2";
 
 export default {
   name: "DashBoardFundWallet",
